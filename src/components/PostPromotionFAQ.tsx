@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
@@ -23,75 +24,78 @@ export default function PostPromotionFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const scrollToPricing = () => {
-    const pricingSection = document.getElementById('pricing');
-    if (pricingSection) {
-      pricingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    document
+      .getElementById("pricing")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
-    <section className="w-full bg-black px-4 sm:px-6 py-20 text-white">
-      {/* Header */}
-      <div className="max-w-2xl mx-auto text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-          Post promotion
-        </h2>
-        <p className="text-white/80 text-sm sm:text-base leading-relaxed">
-          Select your coverage tier. Instant activation.
-          <br />
-          No password required. (Interactions include both comments and likes.)
-        </p>
-      </div>
+    <section className="relative w-full bg-black px-6 py-32 text-white overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(250,204,21,0.12),transparent_45%)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black" />
 
-      {/* CTA */}
-      <div className="max-w-3xl mx-auto mt-8">
+      <div className="relative z-10 max-w-3xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">
+            Post promotion
+          </h2>
+          <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+            Choose your coverage tier. Instant activation.
+            <br />
+            No password required. Real likes & comments only.
+          </p>
+        </div>
+
+        {/* CTA */}
         <button
           onClick={scrollToPricing}
-          className="w-full rounded-xl bg-yellow-400 py-4 text-black font-semibold text-base hover:bg-yellow-300 transition"
+          className="w-full mb-20 rounded-2xl bg-gradient-to-r from-yellow-300 to-yellow-400 py-4 text-black font-semibold text-base shadow-[0_20px_60px_rgba(250,204,21,0.45)] hover:from-yellow-200 hover:to-yellow-300 transition-all active:scale-95"
         >
-          Start Campaign!
+          Start campaign
         </button>
-      </div>
 
-      {/* FAQ */}
-      <div className="max-w-3xl mx-auto mt-20">
-        <h3 className="text-2xl font-bold mb-8">
+        {/* FAQ */}
+        <h3 className="text-2xl font-semibold mb-8">
           Frequently asked questions
         </h3>
 
-        <div className="divide-y divide-white/10">
+        <div className="space-y-4">
           {faqs.map((faq, i) => {
             const isOpen = openIndex === i;
 
             return (
-              <button
+              <div
                 key={i}
-                onClick={() => setOpenIndex(isOpen ? null : i)}
-                className="w-full text-left py-5 flex flex-col"
+                className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur transition hover:border-white/20"
               >
-                <div className="flex items-center justify-between">
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : i)}
+                  className="w-full flex items-center justify-between px-6 py-5 text-left"
+                >
                   <span className="font-medium text-base sm:text-lg">
                     {faq.q}
                   </span>
-                  <span
-                    className={`transition-transform ${isOpen ? "rotate-180" : ""
-                      }`}
-                  >
-                    ⌄
-                  </span>
-                </div>
+                  <ChevronDown
+                    className={`h-5 w-5 transition-transform duration-300 ${
+                      isOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
 
                 <div
-                  className={`grid transition-all duration-300 ease-in-out ${isOpen
-                      ? "grid-rows-[1fr] opacity-100 mt-3"
+                  className={`grid transition-all duration-300 ease-in-out ${
+                    isOpen
+                      ? "grid-rows-[1fr] opacity-100"
                       : "grid-rows-[0fr] opacity-0"
-                    }`}
+                  }`}
                 >
-                  <div className="overflow-hidden text-sm sm:text-base text-white/80 leading-relaxed">
+                  <div className="overflow-hidden px-6 pb-5 text-sm sm:text-base text-white/75 leading-relaxed">
                     {faq.a}
                   </div>
                 </div>
-              </button>
+              </div>
             );
           })}
         </div>
