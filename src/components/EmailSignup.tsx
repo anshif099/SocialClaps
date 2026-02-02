@@ -48,7 +48,7 @@ export default function EmailSignup() {
 
       {/* Footer */}
       <div className="mt-16 text-center text-sm text-white/60">
-        © 2026 SocialClaps, Powered by Rainhopes
+        © 2026 SocialClaps, Powered by ALEV
         <div className="mt-3">
           <a href="#" className="underline hover:text-white">
             Terms and Policies
