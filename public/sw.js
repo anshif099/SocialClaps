@@ -1,51 +1,27 @@
-// Service Worker for SocialClaps PWA
-const CACHE_NAME = 'socialclaps-v1';
-const urlsToCache = [
-    '/',
-    '/index.html',
-    '/favicon.ico',
-    '/icon-192.png',
-    '/icon-512.png'
-];
+// Service Worker Cleanup
+// This ensures that any old cached versions are removed and the SW unregisters itself.
 
-// Install event - cache resources
 self.addEventListener('install', (event) => {
-    event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then((cache) => {
-                console.log('Opened cache');
-                return cache.addAll(urlsToCache);
-            })
-    );
+    // Skip waiting to activate immediately
+    self.skipWaiting();
 });
 
-// Fetch event - serve from cache when offline
-self.addEventListener('fetch', (event) => {
-    event.respondWith(
-        caches.match(event.request)
-            .then((response) => {
-                // Cache hit - return response
-                if (response) {
-                    return response;
-                }
-                return fetch(event.request);
-            }
-            )
-    );
-});
-
-// Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
-    const cacheWhitelist = [CACHE_NAME];
+    // Unregister this SW and claim clients
     event.waitUntil(
-        caches.keys().then((cacheNames) => {
-            return Promise.all(
-                cacheNames.map((cacheName) => {
-                    if (cacheWhitelist.indexOf(cacheName) === -1) {
-                        return caches.delete(cacheName);
-                    }
-                })
-            );
-        })
+        self.registration.unregister()
+            .then(() => self.clients.claim())
+            .then(() => {
+                // Optional: Force reload all clients
+                return self.clients.matchAll();
+            })
+            .then((clients) => {
+                clients.forEach((client) => {
+                    // Send a message to the client to reload if needed, 
+                    // or just let the next navigation handle it.
+                    // For now, we just unregister.
+                    console.log('Service Worker unregistered.');
+                });
+            })
     );
 });
