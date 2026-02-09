@@ -2,57 +2,57 @@ import React from "react";
 
 const plans = [
   {
-    title: "THE STARTER",
-    price: "$20",
-    cta: "Get started",
+    title: "BRONZE LAUNCHER",
+    price: "$25",
+    cta: "Launch post",
     highlight: false,
     duration: "~6 hours",
     features: [
-      "25+ Network Interactions",
-      "Targeted Post Activation",
-      "Verified & Regular Accounts",
-      "Organic Growth",
+      "10–20 Comments with Likes",
+      "Mixed Verified & Regular Accounts",
+      "Natural engagement flow",
+      "Organic visibility boost",
     ],
   },
   {
-    title: "THE INSIDER",
+    title: "SILVER SKYLINE",
     price: "$40",
     badge: "Most popular",
-    cta: "Start now",
+    cta: "Boost now",
     highlight: true,
     duration: "~12 hours",
     features: [
-      "55+ Network Interactions",
-      "High-volume promotion",
-      "Verified & Regular Accounts",
-      "Priority placement",
+      "50 Comments with Likes",
+      "Mixed Verified & Regular Accounts",
+      "Balanced growth strategy",
+      "Priority interaction timing",
     ],
   },
   {
-    title: "LABEL READY",
-    price: "$70",
-    cta: "Go viral",
+    title: "GOLD MEDAL",
+    price: "$75",
+    cta: "Go premium",
     highlight: false,
     duration: "~24 hours",
     features: [
-      "100+ Network Interactions",
-      "Maximum visibility strategy",
-      "Verified & Regular Accounts",
-      "“Label-ready” metrics",
+      "100 Comments with Likes",
+      "High-trust verified mix",
+      "Strong algorithm signals",
+      "High-visibility engagement",
     ],
   },
   {
-    title: "THE VIRAL LAUNCH",
-    price: "$129",
-    cta: "Priority buy",
+    title: "EMERALD VALLEY",
+    price: "$125",
+    cta: "Dominate reach",
     highlight: false,
     duration: "~48 hours",
     features: [
-      "200+ Network Interactions",
-      "Dedicated 48-hour network blast",
-      "Extra verified & regular accounts",
+      "155 Comments with Likes",
+      "Elite verified & regular mix",
+      "Maximum engagement density",
+      "Top-tier algorithm push",
       "Priority customer support",
-      "Maximum algorithm push",
     ],
   },
 ];
@@ -74,7 +74,7 @@ const PricingPlans: React.FC = () => {
             <span className="text-yellow-400">pricing</span>
           </h2>
           <p className="mt-4 text-white/70">
-            Pay per post. No subscriptions. No hidden fees.
+            Pay per Instagram post. No subscriptions. No hidden fees.
           </p>
         </div>
 
@@ -108,7 +108,7 @@ const PricingPlans: React.FC = () => {
                   {plan.price}
                 </div>
                 <div className="text-sm text-white/60 mt-1">
-                  per post
+                  per Instagram post
                 </div>
               </div>
 
