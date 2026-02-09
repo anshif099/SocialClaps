@@ -30,68 +30,81 @@ export default function PostPromotionFAQ() {
   };
 
   return (
-    <section className="relative w-full bg-black px-6 py-32 text-white overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(250,204,21,0.12),transparent_45%)]" />
+    <section className="relative w-full bg-black px-6 py-36 text-white overflow-hidden">
+      {/* === LIQUID GLASS BACKGROUND === */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(59,130,246,0.18),transparent_45%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_0%,rgba(234,179,8,0.12),transparent_50%)]" />
       <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black" />
 
       <div className="relative z-10 max-w-3xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
+        {/* === HEADER === */}
+        <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">
-            Post promotion
+            Post{" "}
+            <span className="bg-gradient-to-r from-blue-400 to-yellow-300 bg-clip-text text-transparent">
+              promotion
+            </span>
           </h2>
-          <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+          <p className="text-white/65 text-sm sm:text-base leading-relaxed">
             Choose your coverage tier. Instant activation.
             <br />
             No password required. Real likes & comments only.
           </p>
         </div>
 
-        {/* CTA */}
-        <button
-          onClick={scrollToPricing}
-          className="w-full mb-20 rounded-2xl bg-gradient-to-r from-yellow-300 to-yellow-400 py-4 text-black font-semibold text-base shadow-[0_20px_60px_rgba(250,204,21,0.45)] hover:from-yellow-200 hover:to-yellow-300 transition-all active:scale-95"
-        >
-          Start campaign
-        </button>
+        {/* === CTA GLASS CARD === */}
+        <div className="mb-24 rounded-[32px] border border-white/15 bg-white/5 backdrop-blur-2xl p-8 shadow-[0_40px_120px_rgba(59,130,246,0.25)]">
+          <button
+            onClick={scrollToPricing}
+            className="w-full rounded-full bg-gradient-to-r from-yellow-300 to-yellow-400 py-4 text-black font-semibold text-base shadow-[0_20px_60px_rgba(234,179,8,0.45)] hover:from-yellow-200 hover:to-yellow-300 transition-all active:scale-95"
+          >
+            Start campaign
+          </button>
+        </div>
 
-        {/* FAQ */}
-        <h3 className="text-2xl font-semibold mb-8">
+        {/* === FAQ TITLE === */}
+        <h3 className="text-2xl font-semibold mb-10 text-center">
           Frequently asked questions
         </h3>
 
-        <div className="space-y-4">
+        {/* === FAQ ITEMS === */}
+        <div className="space-y-5">
           {faqs.map((faq, i) => {
             const isOpen = openIndex === i;
 
             return (
               <div
                 key={i}
-                className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur transition hover:border-white/20"
+                className={`rounded-[28px] border backdrop-blur-2xl transition-all
+                  ${
+                    isOpen
+                      ? "bg-white/10 border-white/25 shadow-[0_30px_80px_rgba(59,130,246,0.25)]"
+                      : "bg-white/5 border-white/15 hover:border-white/25"
+                  }`}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : i)}
-                  className="w-full flex items-center justify-between px-6 py-5 text-left"
+                  className="w-full flex items-center justify-between px-7 py-6 text-left"
                 >
-                  <span className="font-medium text-base sm:text-lg">
+                  <span className="font-medium text-base sm:text-lg text-white">
                     {faq.q}
                   </span>
                   <ChevronDown
-                    className={`h-5 w-5 transition-transform duration-300 ${
-                      isOpen ? "rotate-180" : ""
+                    className={`h-5 w-5 text-white/70 transition-transform duration-300 ${
+                      isOpen ? "rotate-180 text-yellow-300" : ""
                     }`}
                   />
                 </button>
 
                 <div
-                  className={`grid transition-all duration-300 ease-in-out ${
-                    isOpen
-                      ? "grid-rows-[1fr] opacity-100"
-                      : "grid-rows-[0fr] opacity-0"
-                  }`}
+                  className={`grid transition-all duration-300 ease-[cubic-bezier(.4,0,.2,1)]
+                    ${
+                      isOpen
+                        ? "grid-rows-[1fr] opacity-100"
+                        : "grid-rows-[0fr] opacity-0"
+                    }`}
                 >
-                  <div className="overflow-hidden px-6 pb-5 text-sm sm:text-base text-white/75 leading-relaxed">
+                  <div className="overflow-hidden px-7 pb-6 text-sm sm:text-base text-white/70 leading-relaxed">
                     {faq.a}
                   </div>
                 </div>

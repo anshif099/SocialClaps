@@ -61,44 +61,48 @@ const PricingPlans: React.FC = () => {
   return (
     <section
       id="pricing"
-      className="relative w-full bg-black px-6 py-32 overflow-hidden"
+      className="relative w-full bg-black px-6 py-36 overflow-hidden"
     >
-      {/* Background glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(250,204,21,0.12),transparent_45%)]" />
+      {/* === LIQUID BACKGROUND === */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(59,130,246,0.18),transparent_45%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_0%,rgba(234,179,8,0.12),transparent_50%)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Section header */}
-        <div className="text-center max-w-xl mx-auto mb-20">
+        {/* === HEADER === */}
+        <div className="text-center max-w-xl mx-auto mb-24">
           <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-white">
             Simple, transparent{" "}
-            <span className="text-yellow-400">pricing</span>
+            <span className="bg-gradient-to-r from-blue-400 to-yellow-300 bg-clip-text text-transparent">
+              pricing
+            </span>
           </h2>
-          <p className="mt-4 text-white/70">
+          <p className="mt-4 text-white/65">
             Pay per Instagram post. No subscriptions. No hidden fees.
           </p>
         </div>
 
-        {/* Plans */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* === PLANS === */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {plans.map((plan, i) => (
             <div
               key={i}
-              className={`relative rounded-3xl p-8 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2
+              className={`relative group rounded-[36px] p-9 backdrop-blur-2xl transition-all duration-300
                 ${
                   plan.highlight
-                    ? "bg-yellow-400/10 border-2 border-yellow-400 shadow-[0_30px_100px_rgba(250,204,21,0.35)]"
-                    : "bg-white/5 border border-white/10 hover:border-white/20"
+                    ? "bg-white/10 border border-yellow-300/40 shadow-[0_60px_160px_rgba(234,179,8,0.35)] scale-[1.03]"
+                    : "bg-white/5 border border-white/15 hover:border-white/25 hover:-translate-y-2"
                 }`}
             >
               {/* Badge */}
               {plan.badge && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-yellow-400 px-4 py-1 text-xs font-semibold text-black shadow-lg">
+                <span className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-yellow-300 to-yellow-400 px-4 py-1 text-xs font-semibold text-black shadow-lg">
                   {plan.badge}
                 </span>
               )}
 
               {/* Title */}
-              <h3 className="text-center text-xs font-semibold tracking-widest text-yellow-400 mb-6">
+              <h3 className="text-center text-xs font-semibold tracking-widest text-yellow-300 mb-6">
                 {plan.title}
               </h3>
 
@@ -114,10 +118,10 @@ const PricingPlans: React.FC = () => {
 
               {/* CTA */}
               <button
-                className={`w-full rounded-xl py-3 text-sm font-semibold mb-8 transition-all active:scale-95
+                className={`w-full rounded-2xl py-3.5 text-sm font-semibold mb-8 transition-all active:scale-95
                   ${
                     plan.highlight
-                      ? "bg-yellow-400 text-black hover:bg-yellow-300"
+                      ? "bg-gradient-to-r from-yellow-300 to-yellow-400 text-black hover:from-yellow-200 hover:to-yellow-300"
                       : "bg-white/10 text-white hover:bg-white/20"
                   }`}
               >
@@ -128,14 +132,14 @@ const PricingPlans: React.FC = () => {
               <ul className="space-y-4 text-sm">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex gap-3">
-                    <span className="text-yellow-400">✓</span>
+                    <span className="text-yellow-300">✓</span>
                     <span className="text-white/80">{feature}</span>
                   </li>
                 ))}
               </ul>
 
               {/* Duration */}
-              <div className="mt-8 flex items-center gap-2 text-sm text-white/70">
+              <div className="mt-8 flex items-center gap-2 text-sm text-white/60">
                 <span>⏱</span>
                 <span>
                   <strong className="text-white">Duration:</strong>{" "}
