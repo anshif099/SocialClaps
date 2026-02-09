@@ -28,7 +28,7 @@ export default function EmailSignup() {
         {/* === REAL INSTAGRAM PROFILE CARD === */}
         <div className="mb-20 flex justify-center">
           <a
-            href="https://www.instagram.com/_benthompson"
+            href="https://www.instagram.com/_benthompson_"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center gap-4 rounded-[30px] border border-white/15 bg-white/5 backdrop-blur-2xl px-7 py-4 shadow-[0_30px_80px_rgba(59,130,246,0.25)] hover:border-white/25 hover:scale-[1.02] transition"
@@ -43,7 +43,7 @@ export default function EmailSignup() {
             {/* Profile info */}
             <div className="text-left">
               <p className="text-sm font-semibold text-white group-hover:text-yellow-300 transition">
-                @_benthompson
+                @_benthompson_
               </p>
               <p className="text-xs text-white/65">
                 Instagram · Real engagement · Manual outreach
