@@ -30,7 +30,7 @@ export default function PostPromotionFAQ() {
   };
 
   return (
-    <section className="relative w-full bg-black px-6 py-36 text-white overflow-hidden">
+    <section className="relative w-full bg-black px-6 py-10 text-white overflow-hidden">
       {/* === LIQUID GLASS BACKGROUND === */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(59,130,246,0.18),transparent_45%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_0%,rgba(234,179,8,0.12),transparent_50%)]" />

@@ -7,7 +7,7 @@ const RecentResults: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full bg-black py-36 px-6 overflow-hidden text-center">
+    <section className="relative w-full bg-black py-10 px-6 overflow-hidden text-center">
       {/* === LIQUID GLASS BACKGROUND === */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(59,130,246,0.18),transparent_45%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_30%,rgba(234,179,8,0.14),transparent_50%)]" />

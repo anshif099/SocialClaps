@@ -61,7 +61,7 @@ const PricingPlans: React.FC = () => {
   return (
     <section
       id="pricing"
-      className="relative w-full bg-black px-6 py-36 overflow-hidden"
+      className="relative w-full bg-black px-6 py-10 overflow-hidden"
     >
       {/* === LIQUID BACKGROUND === */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(59,130,246,0.18),transparent_45%)]" />

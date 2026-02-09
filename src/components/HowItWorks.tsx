@@ -2,7 +2,7 @@ import React from "react";
 
 const HowItWorks: React.FC = () => {
   return (
-    <section className="relative w-full bg-black text-white px-6 py-36 overflow-hidden">
+    <section className="relative w-full bg-black text-white px-6 py-10 overflow-hidden">
       {/* === LIQUID GLASS BACKGROUND === */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(59,130,246,0.18),transparent_45%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(234,179,8,0.12),transparent_50%)]" />

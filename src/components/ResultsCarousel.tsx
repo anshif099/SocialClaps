@@ -18,7 +18,7 @@ export default function ResultsCarousel() {
     setIndex((i) => (i === slides.length - 1 ? 0 : i + 1));
 
   return (
-    <section className="relative w-full bg-black py-32 flex justify-center overflow-hidden">
+    <section className="relative w-full bg-black py-10 flex justify-center overflow-hidden">
       {/* === LIQUID BACKGROUND === */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(59,130,246,0.18),transparent_45%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_60%,rgba(234,179,8,0.12),transparent_50%)]" />

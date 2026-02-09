@@ -68,7 +68,7 @@ export default function Contact() {
           </form>
 
           {/* === EMAIL SIGNUP === */}
-          <div className="mt-36">
+          <div className="mt-1">
             <EmailSignup />
           </div>
         </div>
