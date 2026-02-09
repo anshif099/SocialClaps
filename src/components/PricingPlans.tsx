@@ -61,23 +61,22 @@ const PricingPlans: React.FC = () => {
   return (
     <section
       id="pricing"
-      className="relative w-full bg-black px-6 py-10 overflow-hidden"
+      className="relative w-full bg-gradient-to-b from-blue-100 via-blue-50 to-yellow-50 px-6 py-16 overflow-hidden"
     >
-      {/* === LIQUID BACKGROUND === */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(59,130,246,0.18),transparent_45%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_0%,rgba(234,179,8,0.12),transparent_50%)]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black" />
+      {/* === LIQUID GLASS BACKGROUND === */}
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_20%_0%,rgba(96,165,250,0.35),transparent_45%)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_80%_0%,rgba(253,224,71,0.35),transparent_50%)]" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* === HEADER === */}
         <div className="text-center max-w-xl mx-auto mb-24">
-          <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-white">
+          <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-black/90">
             Simple, transparent{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-yellow-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-500 to-yellow-400 bg-clip-text text-transparent">
               pricing
             </span>
           </h2>
-          <p className="mt-4 text-white/65">
+          <p className="mt-4 text-black/65 hover:text-black/85 transition">
             Pay per Instagram post. No subscriptions. No hidden fees.
           </p>
         </div>
@@ -90,8 +89,8 @@ const PricingPlans: React.FC = () => {
               className={`relative group rounded-[36px] p-9 backdrop-blur-2xl transition-all duration-300
                 ${
                   plan.highlight
-                    ? "bg-white/10 border border-yellow-300/40 shadow-[0_60px_160px_rgba(234,179,8,0.35)] scale-[1.03]"
-                    : "bg-white/5 border border-white/15 hover:border-white/25 hover:-translate-y-2"
+                    ? "bg-white/70 border border-yellow-400/40 shadow-[0_60px_160px_rgba(253,224,71,0.45)] scale-[1.04]"
+                    : "bg-white/60 border border-black/10 hover:-translate-y-2 hover:shadow-[0_50px_140px_rgba(59,130,246,0.35)]"
                 }`}
             >
               {/* Badge */}
@@ -102,16 +101,16 @@ const PricingPlans: React.FC = () => {
               )}
 
               {/* Title */}
-              <h3 className="text-center text-xs font-semibold tracking-widest text-yellow-300 mb-6">
+              <h3 className="text-center text-xs font-semibold tracking-widest text-black/70 group-hover:text-yellow-500 mb-6 transition">
                 {plan.title}
               </h3>
 
               {/* Price */}
               <div className="text-center mb-8">
-                <div className="text-5xl font-bold text-white">
+                <div className="text-5xl font-bold text-black/90">
                   {plan.price}
                 </div>
-                <div className="text-sm text-white/60 mt-1">
+                <div className="text-sm text-black/60 mt-1">
                   per Instagram post
                 </div>
               </div>
@@ -121,8 +120,8 @@ const PricingPlans: React.FC = () => {
                 className={`w-full rounded-2xl py-3.5 text-sm font-semibold mb-8 transition-all active:scale-95
                   ${
                     plan.highlight
-                      ? "bg-gradient-to-r from-yellow-300 to-yellow-400 text-black hover:from-yellow-200 hover:to-yellow-300"
-                      : "bg-white/10 text-white hover:bg-white/20"
+                      ? "bg-gradient-to-r from-yellow-300 to-yellow-400 text-black hover:from-blue-400 hover:to-yellow-300"
+                      : "bg-white/70 text-black/80 hover:text-yellow-500 hover:bg-white"
                   }`}
               >
                 {plan.cta}
@@ -132,17 +131,19 @@ const PricingPlans: React.FC = () => {
               <ul className="space-y-4 text-sm">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex gap-3">
-                    <span className="text-yellow-300">✓</span>
-                    <span className="text-white/80">{feature}</span>
+                    <span className="text-yellow-400">✓</span>
+                    <span className="text-black/70 group-hover:text-black/90 transition">
+                      {feature}
+                    </span>
                   </li>
                 ))}
               </ul>
 
               {/* Duration */}
-              <div className="mt-8 flex items-center gap-2 text-sm text-white/60">
+              <div className="mt-8 flex items-center gap-2 text-sm text-black/60 group-hover:text-black/80 transition">
                 <span>⏱</span>
                 <span>
-                  <strong className="text-white">Duration:</strong>{" "}
+                  <strong className="text-black/90">Duration:</strong>{" "}
                   {plan.duration}
                 </span>
               </div>

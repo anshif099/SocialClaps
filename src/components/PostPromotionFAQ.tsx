@@ -30,22 +30,26 @@ export default function PostPromotionFAQ() {
   };
 
   return (
-    <section className="relative w-full bg-black px-6 py-10 text-white overflow-hidden">
-      {/* === LIQUID GLASS BACKGROUND === */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(59,130,246,0.18),transparent_45%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_0%,rgba(234,179,8,0.12),transparent_50%)]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black" />
+    <section className="relative w-full px-6 py-16 overflow-hidden
+      bg-gradient-to-b from-blue-100 via-blue-50 to-yellow-50">
+
+      {/* === LIQUID BACKGROUND === */}
+      <div className="absolute inset-0 pointer-events-none
+        bg-[radial-gradient(circle_at_20%_0%,rgba(96,165,250,0.35),transparent_45%)]" />
+      <div className="absolute inset-0 pointer-events-none
+        bg-[radial-gradient(circle_at_80%_0%,rgba(253,224,71,0.35),transparent_50%)]" />
 
       <div className="relative z-10 max-w-3xl mx-auto">
+
         {/* === HEADER === */}
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-4 text-black/90">
             Post{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-yellow-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-500 to-yellow-400 bg-clip-text text-transparent">
               promotion
             </span>
           </h2>
-          <p className="text-white/65 text-sm sm:text-base leading-relaxed">
+          <p className="text-black/65 text-sm sm:text-base leading-relaxed">
             Choose your coverage tier. Instant activation.
             <br />
             No password required. Real likes & comments only.
@@ -53,46 +57,60 @@ export default function PostPromotionFAQ() {
         </div>
 
         {/* === CTA GLASS CARD === */}
-        <div className="mb-24 rounded-[32px] border border-white/15 bg-white/5 backdrop-blur-2xl p-8 shadow-[0_40px_120px_rgba(59,130,246,0.25)]">
+        <div className="mb-24 rounded-[36px]
+          bg-white/70 backdrop-blur-2xl
+          border border-black/10
+          p-8 shadow-[0_40px_120px_rgba(59,130,246,0.25)]">
+
           <button
             onClick={scrollToPricing}
-            className="w-full rounded-full bg-gradient-to-r from-yellow-300 to-yellow-400 py-4 text-black font-semibold text-base shadow-[0_20px_60px_rgba(234,179,8,0.45)] hover:from-yellow-200 hover:to-yellow-300 transition-all active:scale-95"
+            className="w-full rounded-full
+              bg-gradient-to-r from-yellow-300 to-yellow-400
+              py-4 text-black font-semibold text-base
+              hover:from-blue-400 hover:to-yellow-300
+              transition-all active:scale-95"
           >
             Start campaign
           </button>
         </div>
 
         {/* === FAQ TITLE === */}
-        <h3 className="text-2xl font-semibold mb-10 text-center">
+        <h3 className="text-2xl font-semibold mb-10 text-center text-black/90">
           Frequently asked questions
         </h3>
 
         {/* === FAQ ITEMS === */}
-        <div className="space-y-5">
+        <div className="space-y-6">
           {faqs.map((faq, i) => {
             const isOpen = openIndex === i;
 
             return (
               <div
                 key={i}
-                className={`rounded-[28px] border backdrop-blur-2xl transition-all
+                className={`rounded-[32px]
+                  bg-white/65 backdrop-blur-2xl
+                  border border-black/10
+                  transition-all duration-300
                   ${
                     isOpen
-                      ? "bg-white/10 border-white/25 shadow-[0_30px_80px_rgba(59,130,246,0.25)]"
-                      : "bg-white/5 border-white/15 hover:border-white/25"
+                      ? "shadow-[0_40px_120px_rgba(59,130,246,0.35)]"
+                      : "hover:shadow-[0_30px_90px_rgba(253,224,71,0.35)]"
                   }`}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : i)}
-                  className="w-full flex items-center justify-between px-7 py-6 text-left"
+                  className="w-full flex items-center justify-between px-8 py-6 text-left"
                 >
-                  <span className="font-medium text-base sm:text-lg text-white">
+                  <span className="font-medium text-base sm:text-lg text-black/85">
                     {faq.q}
                   </span>
                   <ChevronDown
-                    className={`h-5 w-5 text-white/70 transition-transform duration-300 ${
-                      isOpen ? "rotate-180 text-yellow-300" : ""
-                    }`}
+                    className={`h-5 w-5 transition-transform duration-300
+                      ${
+                        isOpen
+                          ? "rotate-180 text-yellow-400"
+                          : "text-black/50"
+                      }`}
                   />
                 </button>
 
@@ -104,7 +122,8 @@ export default function PostPromotionFAQ() {
                         : "grid-rows-[0fr] opacity-0"
                     }`}
                 >
-                  <div className="overflow-hidden px-7 pb-6 text-sm sm:text-base text-white/70 leading-relaxed">
+                  <div className="overflow-hidden px-8 pb-6
+                    text-sm sm:text-base text-black/70 leading-relaxed">
                     {faq.a}
                   </div>
                 </div>
