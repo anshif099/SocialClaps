@@ -42,10 +42,10 @@ const PromoVideo = () => {
                         </p>
                     </div>
                 </div>
-                <div className="mx-auto max-w-5xl mt-12 aspect-video overflow-hidden rounded-xl border bg-gray-100 shadow-xl">
+                <div className="mx-auto max-w-5xl mt-12 overflow-hidden rounded-xl border bg-gray-100 shadow-xl">
                     <video
                         ref={videoRef}
-                        className="w-full h-full object-cover"
+                        className="w-full h-auto"
                         controls
                         muted
                         playsInline
