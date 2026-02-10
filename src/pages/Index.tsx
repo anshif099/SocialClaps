@@ -7,6 +7,7 @@ import RecentResults from "@/components/RecentResults";
 import ResultsCarousel from "@/components/ResultsCarousel";
 import SocialProofHero from "@/components/SocialProofHero";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import PromoVideo from "@/components/PromoVideo";
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
       <ResultsCarousel />
       <HowItWorks />
       <PricingPlans />
+      <PromoVideo />
       <PostPromotionFAQ />
       <EmailSignup />
     </div>

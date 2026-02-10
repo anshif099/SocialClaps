@@ -5,11 +5,10 @@ const plans = [
     title: "BRONZE LAUNCHER",
     subtitle: "Starter Instagram Boost",
     price: "$25",
+    color: "#CD7F32",
     cta: "Launch your post",
-    highlight: false,
     duration: "~6 hours",
-    description:
-      "Ideal for new posts needing a quick credibility kickstart.",
+    description: "Ideal for new posts needing a quick credibility kickstart.",
     features: [
       "10–20 authentic comments with likes",
       "Mix of verified & regular accounts",
@@ -21,9 +20,9 @@ const plans = [
     title: "SILVER SKYLINE",
     subtitle: "Balanced Instagram Growth",
     price: "$40",
+    color: "#C0C0C0",
     badge: "Most popular",
     cta: "Boost Instagram now",
-    highlight: true,
     duration: "~12 hours",
     description:
       "Our most popular plan for steady momentum and balanced growth.",
@@ -38,8 +37,8 @@ const plans = [
     title: "GOLD MEDAL",
     subtitle: "Premium Instagram Engagement",
     price: "$75",
+    color: "#FFD700",
     cta: "Go premium",
-    highlight: false,
     duration: "~24 hours",
     description:
       "Perfect for high-visibility campaigns that need strong reach.",
@@ -54,11 +53,10 @@ const plans = [
     title: "EMERALD VALLEY",
     subtitle: "Elite Instagram Domination",
     price: "$125",
+    color: "#50C878",
     cta: "Dominate your reach",
-    highlight: false,
     duration: "~48 hours",
-    description:
-      "For creators and brands ready to dominate their niche.",
+    description: "For creators and brands ready to dominate their niche.",
     features: [
       "155 authentic comments with likes",
       "Elite verified & regular profile mix",
@@ -73,59 +71,56 @@ const PricingPlans: React.FC = () => {
   return (
     <section
       id="pricing"
-      className="relative w-full bg-gradient-to-b from-blue-100 via-blue-50 to-yellow-50 px-6 py-20 overflow-hidden"
+      className="relative w-full bg-gradient-to-b from-blue-100 via-blue-50 to-yellow-50 px-6 py-24"
     >
-      {/* === LIQUID GLASS BACKGROUND === */}
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_20%_0%,rgba(96,165,250,0.35),transparent_45%)]" />
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_80%_0%,rgba(253,224,71,0.35),transparent_50%)]" />
-
-      <div className="relative z-10 max-w-7xl mx-auto">
-        {/* === HEADER === */}
-        <div className="text-center max-w-3xl mx-auto mb-24">
-          <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-black/90">
-            Pricing Plans:{" "}
-            <span className="bg-gradient-to-r from-blue-500 to-yellow-400 bg-clip-text text-transparent">
-              Affordable Instagram Engagement
-            </span>
+      <div className="max-w-7xl mx-auto">
+        {/* HEADER */}
+        <div className="text-center max-w-4xl mx-auto mb-24">
+          <h2 className="text-5xl sm:text-6xl font-bold text-black">
+            Pricing Plans
           </h2>
-          <p className="mt-6 text-black/70 leading-relaxed">
-            Choose from flexible packages tailored to your needs. Every plan
-            delivers real comments with likes from a trusted mix of verified and
-            regular accounts — designed for natural-looking growth.
+          <p className="mt-6 text-lg text-black/70">
+            Real Instagram engagement with authentic comments & likes —
+            engineered for algorithm trust.
           </p>
         </div>
 
-        {/* === PLANS === */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        {/* PLANS */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {plans.map((plan, i) => (
             <div
               key={i}
-              className={`relative group rounded-[36px] p-9 backdrop-blur-2xl transition-all duration-300
-                ${
-                  plan.highlight
-                    ? "bg-white/70 border border-yellow-400/40 shadow-[0_60px_160px_rgba(253,224,71,0.45)] scale-[1.04]"
-                    : "bg-white/60 border border-black/10 hover:-translate-y-2 hover:shadow-[0_50px_140px_rgba(59,130,246,0.35)]"
-                }`}
+              style={{
+                borderColor: plan.color,
+                boxShadow: `0 40px 120px ${plan.color}55`,
+              }}
+              className="relative rounded-[36px] p-9 bg-white/70 backdrop-blur-2xl border transition-all hover:-translate-y-3"
             >
               {/* Badge */}
               {plan.badge && (
-                <span className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-yellow-300 to-yellow-400 px-4 py-1 text-xs font-semibold text-black shadow-lg">
+                <span
+                  style={{ backgroundColor: plan.color }}
+                  className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold text-black shadow-lg"
+                >
                   {plan.badge}
                 </span>
               )}
 
               {/* Title */}
-              <h3 className="text-center text-xs font-semibold tracking-widest text-black/70 group-hover:text-yellow-500 transition">
+              <h3
+                style={{ color: plan.color }}
+                className="text-center text-lg font-extrabold tracking-wider"
+              >
                 {plan.title}
               </h3>
 
-              <p className="mt-2 text-center text-sm text-black/60">
+              <p className="text-center text-sm text-black/60 mt-1">
                 {plan.subtitle}
               </p>
 
               {/* Price */}
               <div className="text-center my-8">
-                <div className="text-5xl font-bold text-black/90">
+                <div className="text-6xl font-extrabold text-black">
                   {plan.price}
                 </div>
                 <div className="text-sm text-black/60 mt-1">
@@ -135,18 +130,16 @@ const PricingPlans: React.FC = () => {
 
               {/* CTA */}
               <button
-                className={`w-full rounded-2xl py-3.5 text-sm font-semibold mb-6 transition-all active:scale-95
-                  ${
-                    plan.highlight
-                      ? "bg-gradient-to-r from-yellow-300 to-yellow-400 text-black hover:from-blue-400 hover:to-yellow-300"
-                      : "bg-white/70 text-black/80 hover:text-yellow-500 hover:bg-white"
-                  }`}
+                style={{
+                  backgroundColor: plan.color,
+                }}
+                className="w-full rounded-2xl py-4 text-sm font-bold text-black mb-6 transition hover:brightness-110 active:scale-95"
               >
                 {plan.cta}
               </button>
 
               {/* Description */}
-              <p className="text-sm text-black/65 mb-6 leading-relaxed">
+              <p className="text-sm text-black/70 mb-6 leading-relaxed">
                 {plan.description}
               </p>
 
@@ -154,30 +147,32 @@ const PricingPlans: React.FC = () => {
               <ul className="space-y-4 text-sm">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex gap-3">
-                    <span className="text-yellow-400">✓</span>
-                    <span className="text-black/70 group-hover:text-black/90 transition">
-                      {feature}
+                    <span
+                      style={{ color: plan.color }}
+                      className="font-bold"
+                    >
+                      ✓
                     </span>
+                    <span className="text-black/80">{feature}</span>
                   </li>
                 ))}
               </ul>
 
               {/* Duration */}
-              <div className="mt-8 flex items-center gap-2 text-sm text-black/60 group-hover:text-black/80 transition">
+              <div className="mt-8 text-sm text-black/70 flex gap-2">
                 <span>⏱</span>
                 <span>
-                  <strong className="text-black/90">Duration:</strong>{" "}
-                  {plan.duration}
+                  <strong>Duration:</strong> {plan.duration}
                 </span>
               </div>
             </div>
           ))}
         </div>
 
-        {/* === FOOTNOTE === */}
+        {/* FOOTNOTE */}
         <p className="mt-20 text-center text-sm text-black/60 max-w-3xl mx-auto">
-          All plans include instant activation. No password required. Focus on
-          creating great content — we handle the engagement.
+          Instant activation. No password required. Organic-looking engagement
+          only.
         </p>
       </div>
     </section>
