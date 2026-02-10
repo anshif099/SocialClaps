@@ -7,8 +7,19 @@ export default function EmailSignup() {
       ?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const instagramLink =
-    "https://www.instagram.com/_benthompson_?igsh=a2g4ZGV1OXppZDNy";
+  const openInstagram = () => {
+    const appLink = "instagram://user?username=_benthompson_";
+    const webLink =
+      "https://www.instagram.com/_benthompson_?igsh=a2g4ZGV1OXppZDNy";
+
+    // Try to open Instagram app
+    window.location.href = appLink;
+
+    // Fallback to web if app doesn't open
+    setTimeout(() => {
+      window.open(webLink, "_blank", "noopener,noreferrer");
+    }, 1000);
+  };
 
   return (
     <section
@@ -43,11 +54,9 @@ export default function EmailSignup() {
 
         {/* === INSTAGRAM PROFILE CARD === */}
         <div className="mb-20 flex justify-center">
-          <a
-            href={instagramLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center gap-4
+          <div
+            onClick={openInstagram}
+            className="cursor-pointer group flex items-center gap-4
               rounded-[32px]
               bg-white/70 backdrop-blur-2xl
               border border-black/10
@@ -76,7 +85,7 @@ export default function EmailSignup() {
             <span className="ml-2 text-black/40 group-hover:text-yellow-500 transition">
               →
             </span>
-          </a>
+          </div>
         </div>
 
         {/* === EMAIL CARD === */}
@@ -95,7 +104,6 @@ export default function EmailSignup() {
             Exclusive deals. Early access. Zero spam.
           </p>
 
-          {/* Input */}
           <div className="relative max-w-md mx-auto">
             <input
               type="email"
@@ -141,17 +149,15 @@ export default function EmailSignup() {
 
             {/* Social */}
             <div className="mt-4 flex justify-center">
-              <a
-                href={instagramLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-black/60 hover:text-yellow-500 transition"
+              <div
+                onClick={openInstagram}
+                className="cursor-pointer text-black/60 hover:text-yellow-500 transition"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z" />
                 </svg>
-              </a>
+              </div>
             </div>
 
             <div className="mt-4">
