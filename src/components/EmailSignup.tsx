@@ -7,19 +7,25 @@ export default function EmailSignup() {
       ?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
+  const instagramLink =
+    "https://www.instagram.com/_benthompson_?igsh=a2g4ZGV1OXppZDNy";
+
   return (
     <section
       className="relative w-full px-6 py-16 overflow-hidden
       bg-gradient-to-b from-blue-100 via-blue-50 to-yellow-50"
     >
       {/* === LIQUID BACKGROUND === */}
-      <div className="absolute inset-0 pointer-events-none
-        bg-[radial-gradient(circle_at_20%_0%,rgba(96,165,250,0.35),transparent_45%)]" />
-      <div className="absolute inset-0 pointer-events-none
-        bg-[radial-gradient(circle_at_80%_0%,rgba(253,224,71,0.35),transparent_50%)]" />
+      <div
+        className="absolute inset-0 pointer-events-none
+        bg-[radial-gradient(circle_at_20%_0%,rgba(96,165,250,0.35),transparent_45%)]"
+      />
+      <div
+        className="absolute inset-0 pointer-events-none
+        bg-[radial-gradient(circle_at_80%_0%,rgba(253,224,71,0.35),transparent_50%)]"
+      />
 
       <div className="relative z-10 max-w-2xl mx-auto">
-
         {/* === TOP CTA === */}
         <div className="flex justify-center mb-16">
           <button
@@ -38,7 +44,7 @@ export default function EmailSignup() {
         {/* === INSTAGRAM PROFILE CARD === */}
         <div className="mb-20 flex justify-center">
           <a
-            href="https://www.instagram.com/_benthompson_"
+            href={instagramLink}
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center gap-4
@@ -136,7 +142,7 @@ export default function EmailSignup() {
             {/* Social */}
             <div className="mt-4 flex justify-center">
               <a
-                href="https://www.instagram.com/_benthompson_"
+                href={instagramLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-black/60 hover:text-yellow-500 transition"
