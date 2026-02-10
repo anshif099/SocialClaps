@@ -12,13 +12,30 @@ export default function EmailSignup() {
     const webLink =
       "https://www.instagram.com/_benthompson_?igsh=a2g4ZGV1OXppZDNy";
 
-    // Try to open Instagram app
+    let didHide = false;
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        didHide = true;
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    // Try opening Instagram app
     window.location.href = appLink;
 
-    // Fallback to web if app doesn't open
+    // Fallback ONLY if app did not open
     setTimeout(() => {
-      window.open(webLink, "_blank", "noopener,noreferrer");
-    }, 1000);
+      document.removeEventListener(
+        "visibilitychange",
+        handleVisibilityChange
+      );
+
+      if (!didHide) {
+        window.open(webLink, "_blank", "noopener,noreferrer");
+      }
+    }, 1200);
   };
 
   return (
