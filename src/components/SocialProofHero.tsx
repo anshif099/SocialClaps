@@ -21,20 +21,19 @@ const SocialProofHero: React.FC = () => {
           </span>
 
           <h1 className="font-semibold leading-[1.05] tracking-tight text-4xl sm:text-5xl lg:text-6xl text-black/90">
-            Industry social
+            Organic social
             <br />
             <span
               className="bg-gradient-to-r from-blue-500 to-yellow-400
               bg-clip-text text-transparent
               hover:from-yellow-400 hover:to-blue-500 transition"
             >
-              proof on autopilot
+              proof on autopilot With Ben10Hits
             </span>
           </h1>
 
           <p className="max-w-md text-black/70 text-base sm:text-lg hover:text-black/90 transition">
-            Real-time notifications that build trust, credibility, and momentum —
-            beautifully and automatically.
+            Welcome to Ben10Hits, your go-to platform for premium Instagram engagement services. Boost your social media presence with authentic comments and likes from real artists, producers, DJs, and influencers. Our pay-per-post model ensures genuine growth without bots, risks, or subscriptions. Experience rapid, natural algorithmic momentum and build trust effortlessly.
           </p>
         </div>
 

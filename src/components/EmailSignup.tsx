@@ -12,10 +12,8 @@ export default function EmailSignup() {
     const webLink =
       "https://www.instagram.com/_benthompson_?igsh=a2g4ZGV1OXppZDNy";
 
-    // Try to open Instagram app
     window.location.href = appLink;
 
-    // Fallback to web if app doesn't open
     setTimeout(() => {
       window.open(webLink, "_blank", "noopener,noreferrer");
     }, 1000);
@@ -23,7 +21,7 @@ export default function EmailSignup() {
 
   return (
     <section
-      className="relative w-full px-6 py-16 overflow-hidden
+      className="relative w-full px-6 py-20 overflow-hidden
       bg-gradient-to-b from-blue-100 via-blue-50 to-yellow-50"
     >
       {/* === LIQUID BACKGROUND === */}
@@ -52,7 +50,7 @@ export default function EmailSignup() {
           </button>
         </div>
 
-        {/* === INSTAGRAM PROFILE CARD === */}
+        {/* === INSTAGRAM PROFILE CARD (UNCHANGED) === */}
         <div className="mb-20 flex justify-center">
           <div
             onClick={openInstagram}
@@ -65,14 +63,12 @@ export default function EmailSignup() {
               hover:shadow-[0_40px_120px_rgba(253,224,71,0.35)]
               hover:scale-[1.03] transition"
           >
-            {/* Avatar */}
             <div className="p-[2px] rounded-full bg-gradient-to-br from-pink-500 via-purple-500 to-yellow-400">
               <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center font-semibold text-black">
                 B
               </div>
             </div>
 
-            {/* Info */}
             <div className="text-left">
               <p className="text-sm font-semibold text-black/85 group-hover:text-yellow-500 transition">
                 @_benthompson_
@@ -88,7 +84,7 @@ export default function EmailSignup() {
           </div>
         </div>
 
-        {/* === EMAIL CARD === */}
+        {/* === EMAIL CARD (UPDATED CONTENT) === */}
         <div
           className="rounded-[40px]
           bg-white/70 backdrop-blur-2xl
@@ -96,12 +92,14 @@ export default function EmailSignup() {
           p-12 text-center
           shadow-[0_40px_140px_rgba(59,130,246,0.35)]"
         >
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-3 text-black/90">
-            Join our email list
+          <h2 className="text-2xl sm:text-3xl font-semibold mb-4 text-black/90">
+            Join Our Email List for Exclusive Instagram Tips and Deals
           </h2>
 
-          <p className="text-black/65 text-sm sm:text-base mb-10">
-            Exclusive deals. Early access. Zero spam.
+          <p className="text-black/65 text-sm sm:text-base mb-10 leading-relaxed">
+            Subscribe for insider strategies on organic Instagram growth,
+            exclusive discounts on engagement packages, early access to new
+            features — and zero spam. Ever.
           </p>
 
           <div className="relative max-w-md mx-auto">
@@ -117,7 +115,7 @@ export default function EmailSignup() {
                 focus:ring-2 focus:ring-yellow-400"
             />
             <button
-              aria-label="Submit email"
+              aria-label="Subscribe"
               className="absolute right-2 top-1/2 -translate-y-1/2
                 w-10 h-10 rounded-full
                 bg-gradient-to-r from-yellow-300 to-yellow-400
@@ -147,7 +145,6 @@ export default function EmailSignup() {
               · Powered by ALEV
             </p>
 
-            {/* Social */}
             <div className="mt-4 flex justify-center">
               <div
                 onClick={openInstagram}

@@ -3,53 +3,65 @@ import React from "react";
 const plans = [
   {
     title: "BRONZE LAUNCHER",
+    subtitle: "Starter Instagram Boost",
     price: "$25",
-    cta: "Launch post",
+    cta: "Launch your post",
     highlight: false,
     duration: "~6 hours",
+    description:
+      "Ideal for new posts needing a quick credibility kickstart.",
     features: [
-      "10–20 Comments with Likes",
-      "Mixed Verified & Regular Accounts",
+      "10–20 authentic comments with likes",
+      "Mix of verified & regular accounts",
       "Natural engagement flow",
       "Organic visibility boost",
     ],
   },
   {
     title: "SILVER SKYLINE",
+    subtitle: "Balanced Instagram Growth",
     price: "$40",
     badge: "Most popular",
-    cta: "Boost now",
+    cta: "Boost Instagram now",
     highlight: true,
     duration: "~12 hours",
+    description:
+      "Our most popular plan for steady momentum and balanced growth.",
     features: [
-      "50 Comments with Likes",
-      "Mixed Verified & Regular Accounts",
-      "Balanced growth strategy",
+      "50 authentic comments with likes",
+      "Mix of verified & regular accounts",
       "Priority interaction timing",
+      "Balanced growth strategy",
     ],
   },
   {
     title: "GOLD MEDAL",
+    subtitle: "Premium Instagram Engagement",
     price: "$75",
     cta: "Go premium",
     highlight: false,
     duration: "~24 hours",
+    description:
+      "Perfect for high-visibility campaigns that need strong reach.",
     features: [
-      "100 Comments with Likes",
-      "High-trust verified mix",
+      "100 authentic comments with likes",
+      "High-trust mix with more verified accounts",
       "Strong algorithm signals",
-      "High-visibility engagement",
+      "High-visibility engagement push",
     ],
   },
   {
     title: "EMERALD VALLEY",
+    subtitle: "Elite Instagram Domination",
     price: "$125",
-    cta: "Dominate reach",
+    cta: "Dominate your reach",
     highlight: false,
     duration: "~48 hours",
+    description:
+      "For creators and brands ready to dominate their niche.",
     features: [
-      "155 Comments with Likes",
-      "Elite verified & regular mix",
+      "155 authentic comments with likes",
+      "Elite verified & regular profile mix",
       "Maximum engagement density",
       "Top-tier algorithm push",
       "Priority customer support",
@@ -61,7 +73,7 @@ const PricingPlans: React.FC = () => {
   return (
     <section
       id="pricing"
-      className="relative w-full bg-gradient-to-b from-blue-100 via-blue-50 to-yellow-50 px-6 py-16 overflow-hidden"
+      className="relative w-full bg-gradient-to-b from-blue-100 via-blue-50 to-yellow-50 px-6 py-20 overflow-hidden"
     >
       {/* === LIQUID GLASS BACKGROUND === */}
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_20%_0%,rgba(96,165,250,0.35),transparent_45%)]" />
@@ -69,15 +81,17 @@ const PricingPlans: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* === HEADER === */}
-        <div className="text-center max-w-xl mx-auto mb-24">
+        <div className="text-center max-w-3xl mx-auto mb-24">
           <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-black/90">
-            Simple, transparent{" "}
+            Pricing Plans:{" "}
             <span className="bg-gradient-to-r from-blue-500 to-yellow-400 bg-clip-text text-transparent">
-              pricing
+              Affordable Instagram Engagement
             </span>
           </h2>
-          <p className="mt-4 text-black/65 hover:text-black/85 transition">
-            Pay per Instagram post. No subscriptions. No hidden fees.
+          <p className="mt-6 text-black/70 leading-relaxed">
+            Choose from flexible packages tailored to your needs. Every plan
+            delivers real comments with likes from a trusted mix of verified and
+            regular accounts — designed for natural-looking growth.
           </p>
         </div>
 
@@ -101,12 +115,16 @@ const PricingPlans: React.FC = () => {
               )}
 
               {/* Title */}
-              <h3 className="text-center text-xs font-semibold tracking-widest text-black/70 group-hover:text-yellow-500 mb-6 transition">
+              <h3 className="text-center text-xs font-semibold tracking-widest text-black/70 group-hover:text-yellow-500 transition">
                 {plan.title}
               </h3>
 
+              <p className="mt-2 text-center text-sm text-black/60">
+                {plan.subtitle}
+              </p>
+
               {/* Price */}
-              <div className="text-center mb-8">
+              <div className="text-center my-8">
                 <div className="text-5xl font-bold text-black/90">
                   {plan.price}
                 </div>
@@ -117,7 +135,7 @@ const PricingPlans: React.FC = () => {
 
               {/* CTA */}
               <button
-                className={`w-full rounded-2xl py-3.5 text-sm font-semibold mb-8 transition-all active:scale-95
+                className={`w-full rounded-2xl py-3.5 text-sm font-semibold mb-6 transition-all active:scale-95
                   ${
                     plan.highlight
                       ? "bg-gradient-to-r from-yellow-300 to-yellow-400 text-black hover:from-blue-400 hover:to-yellow-300"
@@ -126,6 +144,11 @@ const PricingPlans: React.FC = () => {
               >
                 {plan.cta}
               </button>
+
+              {/* Description */}
+              <p className="text-sm text-black/65 mb-6 leading-relaxed">
+                {plan.description}
+              </p>
 
               {/* Features */}
               <ul className="space-y-4 text-sm">
@@ -150,6 +173,12 @@ const PricingPlans: React.FC = () => {
             </div>
           ))}
         </div>
+
+        {/* === FOOTNOTE === */}
+        <p className="mt-20 text-center text-sm text-black/60 max-w-3xl mx-auto">
+          All plans include instant activation. No password required. Focus on
+          creating great content — we handle the engagement.
+        </p>
       </div>
     </section>
   );
